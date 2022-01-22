@@ -1,0 +1,77 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Crypto Currency Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .ptext {
+    text-align: justify;
+  }
+  .bg-light {
+
+    background-color: #dee2e6!important;
+}
+  .hr {
+    min-height: 500px;
+  }
+.mr{
+    margin-top:20px;
+
+  }
+
+</style>
+</head>
+
+</head>
+<body>
+{% block header %}
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        Crypto Currency Details
+      </a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'crypto' %}">Crypto Currency</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'crypto_nomic' %}">Crypto Nomic</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+
+      </ul>
+    </div>
+
+    </div>
+  </nav>
+{% endblock %}
+
+<div class="container hr">
+{% block content %}{% endblock %}
+</div>
+
+{% block footer %}
+<div class="container-x bg-light">
+  <div class="container card1 mr" >
+    <div class="p-3 mb-2" >@copyright</div>
+  </div>
+</div>
+{% endblock %}
+</body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

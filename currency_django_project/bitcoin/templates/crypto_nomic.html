@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="alert alert-dark mr" role="alert">
+            <span style="font-size:30px;">Bitcoin Latest Price</span> <span style="font-size:15px;">by <a href="http://ThePythonDjango.Com" target="_blank">ThePythonDjango.Com</a></span>
+        </div>
+
+        <div class="list-group">
+            <div class="list-group-item list-group-item-primary">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Logo</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-md-"2>
+                        <label>INR Price</label>
+                    </div>
+<!--                    <div class="col-md-2">-->
+<!--                        <label>Price Change (1 hr)</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        <label>Price Change (24 hr)</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        <label>Price Change (7 days)</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        <label>Price Change (30 days)</label>-->
+<!--                    </div>-->
+                </div>
+            </div>
+            {% for coin in crypto_data %}
+            <div class="list-group-item list-group-item-{% if coin.percent_change_1h.0 == '-'%}danger{% else %}success{% endif %}">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="{{coin.logo_url}}" alt="logo" height="64px" width="64px">
+                    </div>
+                    <div class="col-md-2">
+                        {{coin.name}}
+                    </div>
+                    <div class="col-md-2">
+                        {{coin.price|floatformat:2}}
+                    </div>
+<!--                    <div class="col-md-2">-->
+<!--                        {{coin.quote.INR.percent_change_1h|floatformat:2}}-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        {{coin.quote.INR.percent_change_24h|floatformat:2}}-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        {{coin.quote.INR.percent_change_7d|floatformat:2}}-->
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
+<!--                        {{coin.quote.INR.percent_change_30d|floatformat:2}}-->
+<!--                    </div>-->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}
